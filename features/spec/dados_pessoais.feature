@@ -16,12 +16,12 @@
 #    E seleciono tipo do documento "<tipo de documento>"
 #    E preencho o numero do documento "<numdoc>"
 #    E e clico no botão salvar
-#    #Entao valido a mensagem: Dados salvos com sucesso
+#    Entao valido a mensagem: Dados salvos com sucesso no bloco Dados Pessoais
 #
 #
 #    Exemplos:
-#    |data_nascimento|estado civil|filhos|pais  |tipo de documento|numdoc          |
-#    |01/10/1980     |Casado(a)   |Não   |Brasil|CPF (BRA)        |783.037.040-01  |
+#    |data_nascimento|estado civil|filhos |pais   |tipo de documento |numdoc     |
+#    |01/10/1980     |Casado(a)   |Não    |Canadá |Passport (CAN)    |123456789  |
 #
 #
 #

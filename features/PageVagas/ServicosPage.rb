@@ -1,13 +1,8 @@
-class Servicos<Setup
+ class Servicos < Setup
 
-    def atualizarCV_button
-        # @driver.find_element(:classname, "jsx-3700936111").click
-        # @driver.find_element(:link, "Currículo").click
-        $driver.navigate.to("https://www.vagas.com.br/servicos/curriculo")
-
-
-    end
-
-
-
+def atualizarCV
+    return $driver.find_element(:class, 'edit-link-cv').click
+    # $driver.navigate.to("https://www.vagas.com.br/servicos/curriculo")
 end
+
+   end

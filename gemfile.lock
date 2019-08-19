@@ -3,6 +3,8 @@ GEM
   specs:
     backports (3.15.0)
     builder (3.2.3)
+    childprocess (1.0.1)
+      rake (< 13.0)
     cucumber (3.1.2)
       builder (>= 2.1.2)
       cucumber-core (~> 3.2.0)
@@ -23,6 +25,8 @@ GEM
     gherkin (5.1.0)
     multi_json (1.13.1)
     multi_test (0.1.2)
+    rake (12.3.3)
+    regexp_parser (1.6.0)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
@@ -36,6 +40,13 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
+    rubyzip (1.2.3)
+    selenium-webdriver (3.142.3)
+      childprocess (>= 0.5, < 2.0)
+      rubyzip (~> 1.2, >= 1.2.2)
+    watir (6.16.5)
+      regexp_parser (~> 1.2)
+      selenium-webdriver (~> 3.6)
 
 PLATFORMS
   x64-mingw32
@@ -43,6 +54,7 @@ PLATFORMS
 DEPENDENCIES
   cucumber
   rspec
+  watir
 
 BUNDLED WITH
    2.0.2

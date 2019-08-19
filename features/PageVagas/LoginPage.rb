@@ -19,8 +19,13 @@ class Login < Setup
   end
 
   def login_button
-    return $driver.find_element(:name,'commit').click   
+    return $driver.find_element(:name,'commit').click
+    sleep(3)
   end
+
+
+
+
 
 
 end

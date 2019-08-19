@@ -1,27 +1,18 @@
-Olá,
+InstruÃ§oes para rodar no windows:
 
-agradeço a oportunidade de poder participar do processo seletivo do Vagas.com.
+1 - instalar o ruby
+2 - instalar o gems
+3 - atraves do gems, instalar selenium, rspec, selenium webdriver e cucumber 
+4 - registrar o drive do firefox nas variaveis de ambiente acessar Propriedades do Sistema, VariÃ¡veis de Ambiente. 
+Adicionar o caminho XXX:\TesteVagas\drivers em "Path" nas variÃ¡veis de ambiente para os 
+usuÃ¡rios e para o sistema (Path, Editar, Novo, colar o caminho completo, OK.)
 
-Estou encaminhando o TesteVagas.zip com o projeto de edição dos dados pessoais no site Vagas.com.
-Desenvolvi um projeto de testes automatizados utilizando o Selenium WebDriver e a linguagem Ruby. Portanto, para a execução desse projeto 
-será necessário:
-- Ter o Ruby on Rails instalado na máquina de execução.
-- Ter o Selenium WebDriver instalado através da Gems
-- Ter o Cucumber instalado através da Gems
-- Ter o Rspec instaldo através da Gems
+5 - pela linha de comando, acessar o diretorio do projeto (em features) e digitar "cucumber"
 
-Os testes serão executados através do Firefox, portanto, o arquivo de driver do firefox deve estar na pasta do Ruby (local que é criado automaticamente no sistema operacional). Caminho: C:\Ruby25-x64\bin
-O driver do firefox (geckodriver) está indo em uma pasta separada junto com o arquvio zipado.
+obs: devida a falta de tempo e experiÃªncia na linguagem Ruby, nÃ£o foi possÃ­vel fazer muita coisa que tinha em mente como 
+por exemplo, adicionar geradores de cpf automÃ¡ticos, organizaÃ§Ã£o melhor de variÃ¡veis, etc. mas de qualquer forma, agradeÃ§o
+a oportunidade e adorei o desafio, com certeza pretendo aprofundar mais em automaÃ§Ã£o de testes nesta linguagem =)
 
-Para a execução, basta acessar o CMD (caso seja windows) acessar a pasta do projeto - ~/TesteVagas - e executar o comando: Cucumber. Com isso
-o projeto que já está com as festures de testes (cenários de testes) preparados irá executar os testes automatizados.
+Abcs
 
-Qualquer duvida na execução, fico inteiramente a disposição para tira-las e ajudar na avaliação.
-
-Gostei do desafio e estou muito empolgado com a vaga. Espero realmente que possa ser selecionado para as próximas etapas da oportunidade.
-
-Agradeço mais uma vez e aguardo o retorno.
-
-Saudações,
-
-Camilo de Oliveira
+Diogo

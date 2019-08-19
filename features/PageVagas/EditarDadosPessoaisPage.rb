@@ -37,7 +37,7 @@ class EditarDadosPessoais<Setup
     end
 
     def estado_civil(estCivil)
-        sleep (4)
+        sleep (1)
         dropdown = $driver.find_element(id: 'dados_pessoais_estado_civil')
         select_list = Selenium::WebDriver::Support::Select.new(dropdown)
         select_list.select_by(:text, estCivil)
@@ -45,12 +45,13 @@ class EditarDadosPessoais<Setup
 
     def salvar_dados_pessoais
         $driver.find_element(:xpath,'//*[@id="personalData"]/div[2]/form/div[2]/button').click
-        sleep(2)
+
     end
 
     def dados_salvos_sucesso
         sleep (1)
-        (@driver.find_element(:xpath, "(.//*[normalize-space(text()) and normalize-space(.)='Documento:'])[1]/following::div[2]").text).should == "Dados salvos com sucesso."
+         @msgsucesso = $driver.find_element(xpath: "(.//*[normalize-space(text()) and normalize-space(.)='Documento:'])[1]/following::div[2]")
+         (@msgsucesso.text).should == "Dados salvos com sucesso."
     end
 
 
@@ -84,9 +85,10 @@ class EditarDadosPessoais<Setup
 
     def numdocumento (numdoc)
         sleep (3)
+        @randomnumber = rand 0..10
         @numDoc = $driver.find_element(:xpath,'//*[@id="personalData"]/div[2]/form/div[1]/div[6]/div/div/div/div[3]/input')
         @numDoc.clear
-        @numDoc.send_keys(numdoc)
+        @numDoc.send_keys(numdoc,@randomnumber)
     end
 
 

@@ -5,10 +5,12 @@ Dado("que abro o browser e efetuo o login") do
     @browser.user_name('drenatus')
     @browser.password('304050')
     @browser.login_button
+
 end
   
  Dado("clico em atualizar curriculo") do
-    @home = Home.new
-    @servicos = Servicos.new
-    @servicos.atualizarCV_button
+   @home = Home.new
+   @servicos = Servicos.new
+   @servicos.atualizarCV
+
 end

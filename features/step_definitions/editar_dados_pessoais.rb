@@ -18,7 +18,7 @@ end
     @DadosPessoais.salvar_dados_pessoais
   end
   
-  Entao("valido a mensagem: Dados salvos com sucesso") do
+  Entao("valido a mensagem: Dados salvos com sucesso no bloco Dados Pessoais") do
     @DadosPessoais = EditarDadosPessoais.new    
     @DadosPessoais.dados_salvos_sucesso
     
