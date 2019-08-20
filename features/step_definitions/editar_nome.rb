@@ -9,6 +9,12 @@ Quando("preencho o campo nome {string}") do |nome|
     @editarNome.preencher_nome_random(nome)
 end
 
+Quando("limpo o campo nome") do
+  @editarNome = EditarNome.new
+  @editarNome.limpa_nome
+end
+
+
 Quando("preencho e confirmo o campo nome {string}") do |nome|
   @editarNome = EditarNome.new
   @editarNome.preencher_nome(nome)
@@ -28,8 +34,12 @@ end
 Quando ("valido a mensagem: Dados salvos com sucesso no campo Nome") do
   @editarNome = EditarNome.new
   @editarNome.dados_nome_salvos_sucesso
+  end
 
 
+  Quando ("valido a mensagem O campo nome é obrigatório") do
+    @editarNome = EditarNome.new
+    @editarNome.nome_invalido
 end
 
 

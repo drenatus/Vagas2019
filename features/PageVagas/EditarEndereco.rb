@@ -7,9 +7,9 @@ class EditarEndereco<Setup
 
     def pais_end(paisEnd)
         sleep (1)
-        dropdown = $driver.find_element(id: 'endereco_pais_id')
-        select_list = Selenium::WebDriver::Support::Select.new(dropdown)
-        select_list.select_by(:text, paisEnd)
+        pais = $driver.find_element(id: 'endereco_pais_id')
+        pais_list = Selenium::WebDriver::Support::Select.new(pais)
+        pais_list.select_by(:text, paisEnd)
     end
 
     def cep_end(cep)
@@ -21,16 +21,16 @@ class EditarEndereco<Setup
 
     def estado_end(estadoEnd)
         sleep (3)
-        dropdown = $driver.find_element(id: 'endereco_uf_id')
-        select_list = Selenium::WebDriver::Support::Select.new(dropdown)
-        select_list.select_by(:text, estadoEnd)
+        uf = $driver.find_element(id: 'endereco_uf_id')
+        uf_list = Selenium::WebDriver::Support::Select.new(uf)
+        uf_list.select_by(:text, estadoEnd)
     end
 
     def cidade_end(cidadeEnd)
         sleep (1)
-        dropdown = $driver.find_element(id: 'endereco_cidade_id')
-        select_list = Selenium::WebDriver::Support::Select.new(dropdown)
-        select_list.select_by(:text, cidadeEnd)
+        cidade = $driver.find_element(id: 'endereco_cidade_id')
+        cid_list = Selenium::WebDriver::Support::Select.new(cidade)
+        cid_list.select_by(:text, cidadeEnd)
     end
 
     def bairro_end(bairro)
@@ -44,22 +44,61 @@ class EditarEndereco<Setup
     def endereco_end(endereco)
         sleep (1)
         @randomnumber = rand 0..10
-        @campoCEP = $driver.find_element(:id, 'endereco_logradouro')
-        @campoCEP.clear
-        @campoCEP.send_keys(endereco, @randomnumber)
+        @endereco = $driver.find_element(:id, 'endereco_logradouro')
+        @endereco.clear
+        @endereco.send_keys(endereco, @randomnumber)
 
     end
 
+    def limpa_end
+        sleep (1)
+       $driver.find_element(:id, 'endereco_logradouro').clear
+    end
+
+    def limpa_cep
+        sleep (1)
+        $driver.find_element(:id, 'endereco_codigo_postal').clear
+    end
+
+
     def salvar_end
-        # $driver.find_element(:xpath, '//*[@id="address"]/div[2]/form/div[2]/button').click
-        @campoCEP = $driver.find_element(:id, 'endereco_logradouro').send_keys :enter
-        sleep(2)
+       $driver.execute_script('arguments[0].scrollIntoView();', $driver.find_element(:id,'address' ))
+       $driver.find_element(:xpath, '//*[@id="address"]/div[2]/form/div[2]/button').click
+       sleep(2)
     end
 
     def dados_salvos_sucesso_end
         @sucesso = $driver.find_element(:xpath, "(.//*[normalize-space(text()) and normalize-space(.)='Endereço:'])[1]/following::div[2]")
         (@sucesso.text).should == "Dados salvos com sucesso."
     end
+
+    def mensagem_erro_pais
+        @sucesso = $driver.find_element(:xpath, "(.//*[normalize-space(text()) and normalize-space(.)='País'])[1]/following::p[1]")
+        (@sucesso.text).should == "O campo país é obrigatório"
+    end
+
+
+    def mensagem_erro_cep
+        sleep(1)
+        @sucesso = $driver.find_element(:xpath, "(.//*[normalize-space(text()) and normalize-space(.)='Esqueci meu CEP'])[1]/following::p[1]")
+        (@sucesso.text).should == "O campo cep é obrigatório"
+    end
+
+    def mensagem_erro_estado
+        @sucesso = $driver.find_element(:xpath, "(.//*[normalize-space(text()) and normalize-space(.)='Estado'])[1]/following::p[1]")
+        (@sucesso.text).should == "O campo estado é obrigatório"
+    end
+
+    def mensagem_erro_cidade
+        @sucesso = $driver.find_element(:xpath, "(.//*[normalize-space(text()) and normalize-space(.)='Cidade'])[1]/following::p[1]")
+        (@sucesso.text).should == "O campo cidade é obrigatório"
+    end
+
+    def mensagem_erro_endereco
+        @sucesso = $driver.find_element(:xpath, "(.//*[normalize-space(text()) and normalize-space(.)='Endereço'])[1]/following::p[1]")
+        (@sucesso.text).should == "O campo endereço é obrigatório"
+    end
+
 
 end
 

@@ -18,11 +18,7 @@ end
     @DadosPessoais.salvar_dados_pessoais
   end
   
-  Entao("valido a mensagem: Dados salvos com sucesso no bloco Dados Pessoais") do
-    @DadosPessoais = EditarDadosPessoais.new    
-    @DadosPessoais.dados_salvos_sucesso
-    
-  end
+
   Quando("preencho a data de nascimento {string}") do |dataNasc|
     @DadosPessoais = EditarDadosPessoais.new
     @DadosPessoais.preencher_data(dataNasc)
@@ -66,4 +62,31 @@ end
         @DadosPessoais = EditarDadosPessoais.new
         @DadosPessoais.numdocumento(numdoc)
     end
-   
+
+Quando("limpo o campo Número de documento")do
+  @DadosPessoais = EditarDadosPessoais.new
+  @DadosPessoais.delnumdocumento
+end
+
+
+
+Entao("valido a mensagem: Dados salvos com sucesso no bloco Dados Pessoais") do
+  @DadosPessoais = EditarDadosPessoais.new
+  @DadosPessoais.dados_salvos_sucesso
+
+end
+
+Entao("vejo a mensagem Data de nascimento precisa ter o seguinte formato") do
+  @DadosPessoais = EditarDadosPessoais.new
+  @DadosPessoais.erro_data_nascimento
+
+end
+
+Entao("vejo a mensagem O campo número é obrigatório") do
+  @DadosPessoais = EditarDadosPessoais.new
+  @DadosPessoais.erro_documento
+
+end
+
+
+
