@@ -64,10 +64,10 @@ class EditarEndereco<Setup
     def salvar_end
        $driver.execute_script('arguments[0].scrollIntoView();', $driver.find_element(:id,'address' ))
        $driver.find_element(:xpath, '//*[@id="address"]/div[2]/form/div[2]/button').click
-       sleep(2)
     end
 
     def dados_salvos_sucesso_end
+        sleep(2)
         @sucesso = $driver.find_element(:xpath, "(.//*[normalize-space(text()) and normalize-space(.)='Endereço:'])[1]/following::div[2]")
         (@sucesso.text).should == "Dados salvos com sucesso."
     end
